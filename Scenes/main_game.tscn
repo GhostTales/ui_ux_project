@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://s1etv40go00d"]
+[gd_scene load_steps=3 format=3 uid="uid://s1etv40go00d"]
 
+[ext_resource type="PackedScene" uid="uid://bddd6ds73ssqt" path="res://Scenes/game_hud.tscn" id="1_g0b2w"]
 [ext_resource type="PackedScene" uid="uid://c5dqy0dstioga" path="res://Scenes/player.tscn" id="1_km6c8"]
 
 [node name="main_game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_km6c8")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="Game_HUD" parent="Player/CanvasLayer" instance=ExtResource("1_g0b2w")]
