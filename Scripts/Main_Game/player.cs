@@ -12,7 +12,6 @@ public partial class player : CharacterBody2D
 	{
 		anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		walking = GetNode<AudioStreamPlayer2D>("walking");
-		anim.Play("idle");
 	}
 
 	[Export]

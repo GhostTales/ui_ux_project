@@ -22,11 +22,13 @@ public partial class Sound_button : TextureButton
 		if (this.ButtonPressed)
 		{
 			sound.Value = 0;
+			sound.Editable = false;
 			texture(true);
 		}
 		if (this.ButtonPressed == false && sound.Value == 0)
 		{
 			sound.Value = volume;
+			sound.Editable = true;
 			texture(false);
 		}
 	}
