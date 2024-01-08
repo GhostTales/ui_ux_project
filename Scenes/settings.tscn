@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvx1ngcwqc66o"]
+
+[ext_resource type="Script" path="res://Scripts/Settings/Resolution_slider.cs" id="1_5a6ff"]
+[ext_resource type="Script" path="res://Scripts/Settings/Sound.cs" id="2_nn7fd"]
+
+[node name="Settings" type="Node2D"]
+
+[node name="Resolution" type="HSlider" parent="."]
+offset_left = 10.0
+offset_top = 165.0
+offset_right = 260.0
+offset_bottom = 181.0
+max_value = 10.0
+value = 10.0
+script = ExtResource("1_5a6ff")
+
+[node name="Label" type="Label" parent="Resolution"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -25.0
+offset_right = 86.0
+offset_bottom = 1.0
+text = "Resolution"
+
+[node name="Sound" type="HSlider" parent="."]
+offset_left = 11.0
+offset_top = 212.0
+offset_right = 261.0
+offset_bottom = 228.0
+value = 50.0
+script = ExtResource("2_nn7fd")
+
+[node name="Label" type="Label" parent="Sound"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -23.0
+offset_right = 62.0
+offset_bottom = 3.0
+text = "Volume"
+
+[node name="CheckBox" type="CheckBox" parent="."]
+offset_left = 99.0
+offset_top = 235.0
+offset_right = 123.0
+offset_bottom = 259.0
+
+[node name="Label" type="Label" parent="CheckBox"]
+layout_mode = 0
+offset_left = -85.0
+offset_top = -1.0
+offset_right = -6.0
+offset_bottom = 25.0
+text = "Fullscreen"

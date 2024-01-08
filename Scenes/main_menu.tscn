@@ -1,0 +1,95 @@
+[gd_scene load_steps=16 format=3 uid="uid://iyummsrjx8xr"]
+
+[ext_resource type="Texture2D" uid="uid://ut1jv45wsbq0" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headed.png" id="1_ill0w"]
+[ext_resource type="Texture2D" uid="uid://daj8nbkcnn4ck" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headless.png" id="2_2sbkv"]
+[ext_resource type="Texture2D" uid="uid://nb374cbuorql" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/PlayText/Default.png" id="3_dhgq5"]
+[ext_resource type="Texture2D" uid="uid://fflwf8lo2n6x" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/PlayText/Hover.png" id="4_efswb"]
+[ext_resource type="Script" path="res://Scripts/Main_menu/Play_button.cs" id="5_23uw1"]
+[ext_resource type="Texture2D" uid="uid://cn274bwbp5i13" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/ExitText/Default.png" id="5_lrm6g"]
+[ext_resource type="Texture2D" uid="uid://bptek14vcbjhl" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/ExitText/Hover.png" id="6_nw2id"]
+[ext_resource type="Script" path="res://Scripts/Main_menu/Exit_button.cs" id="7_ml1wu"]
+[ext_resource type="Texture2D" uid="uid://dej8xvnipmche" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/SoundOn/Default.png" id="8_34sow"]
+[ext_resource type="Texture2D" uid="uid://byoclewtk4efe" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/SoundOn/Hover.png" id="9_r31xy"]
+[ext_resource type="Script" path="res://Scripts/Main_menu/Sound_button.cs" id="10_qs45e"]
+[ext_resource type="Texture2D" uid="uid://vxyyiu1xdsit" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Settings/Default.png" id="11_hsx3v"]
+[ext_resource type="Texture2D" uid="uid://d0fuiek71qv16" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Settings/Hover.png" id="12_1koqe"]
+[ext_resource type="Script" path="res://Scripts/Main_menu/Settings_button.cs" id="12_jqwv6"]
+[ext_resource type="PackedScene" uid="uid://bvx1ngcwqc66o" path="res://Scenes/settings.tscn" id="12_yr6xk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Headed" type="Sprite2D" parent="."]
+position = Vector2(577.5, 343)
+scale = Vector2(2.01151, 4.25)
+texture = ExtResource("1_ill0w")
+
+[node name="Headless" type="Sprite2D" parent="."]
+position = Vector2(575.5, 59)
+scale = Vector2(2.00493, 0.701923)
+texture = ExtResource("2_2sbkv")
+
+[node name="Headless2" type="Sprite2D" parent="."]
+position = Vector2(562, 526.312)
+rotation = 1.5708
+scale = Vector2(0.469896, 1.14538)
+texture = ExtResource("2_2sbkv")
+
+[node name="Play_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 412.0
+offset_right = 648.0
+offset_bottom = 500.0
+texture_normal = ExtResource("3_dhgq5")
+texture_pressed = ExtResource("3_dhgq5")
+texture_hover = ExtResource("4_efswb")
+texture_focused = ExtResource("4_efswb")
+script = ExtResource("5_23uw1")
+
+[node name="Exit_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 520.0
+offset_right = 648.0
+offset_bottom = 608.0
+texture_normal = ExtResource("5_lrm6g")
+texture_pressed = ExtResource("5_lrm6g")
+texture_hover = ExtResource("6_nw2id")
+texture_focused = ExtResource("6_nw2id")
+script = ExtResource("7_ml1wu")
+
+[node name="Sound_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 20.0
+offset_right = 208.0
+offset_bottom = 108.0
+toggle_mode = true
+texture_normal = ExtResource("8_34sow")
+texture_pressed = ExtResource("8_34sow")
+texture_hover = ExtResource("9_r31xy")
+texture_focused = ExtResource("9_r31xy")
+script = ExtResource("10_qs45e")
+
+[node name="Settings_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 108.0
+offset_bottom = 108.0
+toggle_mode = true
+texture_normal = ExtResource("11_hsx3v")
+texture_pressed = ExtResource("11_hsx3v")
+texture_hover = ExtResource("12_1koqe")
+texture_focused = ExtResource("12_1koqe")
+script = ExtResource("12_jqwv6")
+
+[node name="Settings" parent="." instance=ExtResource("12_yr6xk")]
+unique_name_in_owner = true
+position = Vector2(20, 20)
