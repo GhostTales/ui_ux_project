@@ -10,11 +10,10 @@ public partial class Play_button : TextureButton
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override async void _Process(double delta)
+	public override void _Process(double delta)
 	{
 		if (this.ButtonPressed)
 		{
-			await Task.Delay(200);
 			GetTree().ChangeSceneToFile("res://Scenes/main_game.tscn");
 		}
 	}
