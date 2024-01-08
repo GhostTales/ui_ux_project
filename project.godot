@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerStats="*res://Scripts/entity_stats/player_stats.cs"
+EnemyStats="*res://Scripts/entity_stats/enemy_stats.cs"
+
 [dotnet]
 
 project/assembly_name="ui-ux projekt"

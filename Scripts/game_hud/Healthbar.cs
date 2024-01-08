@@ -1,21 +1,26 @@
 using Godot;
+using playerstats;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public partial class Healthbar : TextureProgressBar
 {
+	Timer timer;
 
-	Node Player_stats;
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		Player_stats = GetNode<Node>("%Stats/player_stats");
-	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override async void _Process(double delta)
 	{
+		this.Value = player_stats.Health;
+		this.MaxValue = player_stats.Max_Health;
 		GetChild<Label>(0).Text = $"{this.Value} / {this.MaxValue}";
+
+		if (player_stats.Health < player_stats.Max_Health)
+		{
+			
+			player_stats.Health += player_stats.Health_regen;
+		}
+
 	}
 }

@@ -1,8 +1,8 @@
 using System;
 
-namespace playerstats
+namespace enemystats
 {
-    public static class player_stats
+    public static class enemy_stats
     {
         public static int Health { get; set; } = 10; // current health
 		public static int Max_Health { get; set; } = 100; // max health

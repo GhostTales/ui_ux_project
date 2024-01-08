@@ -14,7 +14,7 @@ public partial class Play_button : TextureButton
 	{
 		if (this.ButtonPressed)
 		{
-			await Task.Delay(500);
+			await Task.Delay(200);
 			GetTree().ChangeSceneToFile("res://Scenes/main_game.tscn");
 		}
 	}
