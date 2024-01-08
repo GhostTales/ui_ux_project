@@ -19,12 +19,13 @@ public partial class player_stats : Node
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override async void _Process(double delta)
+	public override void _Process(double delta)
 	{
-		while (Health != Max_Health)
+		if (Health < Max_Health)
 		{
-			await Task.Delay(1000);
+			Task.Delay(1000);
 			Health += Health_regen;
+			GD.Print(Health);
 		}
 	}
 }
