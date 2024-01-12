@@ -1,4 +1,5 @@
 using Godot;
+using playerstats;
 
 
 
@@ -12,6 +13,7 @@ public partial class player : CharacterBody2D
 	{
 		anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		walking = GetNode<AudioStreamPlayer2D>("walking");
+		player_stats.Player_Id = this;
 	}
 
 	[Export]

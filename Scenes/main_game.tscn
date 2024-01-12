@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://s1etv40go00d"]
+[gd_scene load_steps=12 format=3 uid="uid://s1etv40go00d"]
 
 [ext_resource type="PackedScene" uid="uid://bddd6ds73ssqt" path="res://Scenes/game_hud.tscn" id="1_g0b2w"]
 [ext_resource type="PackedScene" uid="uid://c5dqy0dstioga" path="res://Scenes/player.tscn" id="1_km6c8"]
-[ext_resource type="Texture2D" uid="uid://c6uyj0ogdgyyi" path="res://pixilart/Pixel Art Top Down - Basic/Texture/TX Tileset Stone Ground.png" id="2_ct4vi"]
-[ext_resource type="Texture2D" uid="uid://dwsbklbm5tl0p" path="res://pixilart/Pixel Art Top Down - Basic/Texture/TX Tileset Wall.png" id="3_4mmeo"]
-[ext_resource type="Texture2D" uid="uid://dolmjkibqb2st" path="res://pixilart/Pixel Art Top Down - Basic/Texture/TX Tileset Grass.png" id="3_tw1ao"]
+[ext_resource type="Texture2D" uid="uid://c3eik3prbvs8f" path="res://pixilart/Pixel Art Top Down - Basic/Texture/TX Tileset Stone Ground.png" id="2_ct4vi"]
+[ext_resource type="Texture2D" uid="uid://cj5lucvvpid73" path="res://pixilart/Pixel Art Top Down - Basic/Texture/TX Tileset Wall.png" id="3_4mmeo"]
+[ext_resource type="Texture2D" uid="uid://fg3c51jutts3" path="res://pixilart/Pixel Art Top Down - Basic/Texture/TX Tileset Grass.png" id="3_tw1ao"]
+[ext_resource type="PackedScene" uid="uid://bdcmbg6r5f33h" path="res://Scenes/Enemies/spitter_enemy.tscn" id="6_lbb1a"]
+[ext_resource type="Script" path="res://Scripts/Behavior_Tree/Spawners/EnemySpawner.cs" id="7_66nab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idfey"]
 texture = ExtResource("3_tw1ao")
@@ -693,3 +695,16 @@ layer_0/tile_data = PackedInt32Array(-1376285, 851968, 3, -1310749, 196608, 15, 
 
 [node name="Game_HUD" parent="Player/CanvasLayer" instance=ExtResource("1_g0b2w")]
 unique_name_in_owner = true
+
+[node name="SpitterEnemy" parent="." node_paths=PackedStringArray("PlayerNode") instance=ExtResource("6_lbb1a")]
+position = Vector2(-1, -91)
+PlayerNode = NodePath("../Player")
+
+[node name="EnemySpawner" type="Node2D" parent="." node_paths=PackedStringArray("SpawnerNode")]
+script = ExtResource("7_66nab")
+EnemyScene = ExtResource("6_lbb1a")
+SpawnerNode = NodePath(".")
+
+[node name="Timer" type="Timer" parent="EnemySpawner"]
+
+[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]

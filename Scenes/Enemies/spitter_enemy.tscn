@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdcmbg6r5f33h"]
+
+[ext_resource type="Script" path="res://Scripts/Behavior_Tree/EnemiesBT/SpitterEnemyBT.cs" id="1_dkyam"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gm6b"]
+
+[node name="SpitterEnemy" type="CharacterBody2D" node_paths=PackedStringArray("EnemyNode")]
+script = ExtResource("1_dkyam")
+EnemyNode = NodePath(".")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4gm6b")
+debug_color = Color(0.992157, 0, 0.235294, 0.847059)

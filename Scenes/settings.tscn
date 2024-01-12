@@ -16,10 +16,9 @@ script = ExtResource("1_5a6ff")
 
 [node name="Label" type="Label" parent="Resolution"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = -25.0
-offset_right = 86.0
-offset_bottom = 1.0
+offset_top = -24.0
+offset_right = 83.0
+offset_bottom = 2.0
 text = "Resolution"
 
 [node name="Sound" type="HSlider" parent="."]
@@ -32,17 +31,16 @@ script = ExtResource("2_nn7fd")
 
 [node name="Label" type="Label" parent="Sound"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = -23.0
-offset_right = 62.0
-offset_bottom = 3.0
+offset_top = -24.0
+offset_right = 59.0
+offset_bottom = 2.0
 text = "Volume"
 
 [node name="CheckBox" type="CheckBox" parent="."]
-offset_left = 99.0
-offset_top = 235.0
-offset_right = 123.0
-offset_bottom = 259.0
+offset_left = 97.0
+offset_top = 237.0
+offset_right = 121.0
+offset_bottom = 261.0
 
 [node name="Label" type="Label" parent="CheckBox"]
 layout_mode = 0
