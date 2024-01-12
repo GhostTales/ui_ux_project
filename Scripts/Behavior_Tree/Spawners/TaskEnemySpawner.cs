@@ -20,7 +20,7 @@ public partial class TaskEnemySpawner : BtNode
 	{
 		var enemy = ResourceLoader.Load<PackedScene>("res://Scenes/Enemies/spitter_enemy.tscn").Instantiate();
 
-		if (Spawner.GetChildCount() < 10)
+		if (Spawner.GetChildCount() < 100)
 			Spawner.AddChild(enemy);
 
 

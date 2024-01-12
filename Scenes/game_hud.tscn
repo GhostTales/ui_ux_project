@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bddd6ds73ssqt"]
+[gd_scene load_steps=5 format=3 uid="uid://bddd6ds73ssqt"]
 
-[ext_resource type="Texture2D" uid="uid://dl376yscxbd7g" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/ProgressBar/Background.png" id="1_che07"]
-[ext_resource type="Texture2D" uid="uid://dkxc0h6ahykst" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/ProgressBar/VLine.png" id="2_lwj17"]
+[ext_resource type="Texture2D" uid="uid://krbb4hjis2ky" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/ProgressBar/Background.png" id="1_che07"]
+[ext_resource type="Texture2D" uid="uid://dnqvd6m0r4pkx" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/ProgressBar/VLine.png" id="2_lwj17"]
 [ext_resource type="Script" path="res://Scripts/game_hud/Healthbar.cs" id="3_t8yuy"]
+[ext_resource type="Script" path="res://Scripts/game_hud/FPS_counter.cs" id="4_dr6wy"]
 
 [node name="Game_HUD" type="Control"]
 layout_mode = 3
@@ -14,10 +15,10 @@ grow_vertical = 2
 
 [node name="Healthbar" type="TextureProgressBar" parent="."]
 layout_mode = 2
-offset_left = 14.0
-offset_top = 594.0
-offset_right = 502.0
-offset_bottom = 642.0
+offset_left = 22.0
+offset_top = 1012.0
+offset_right = 510.0
+offset_bottom = 1060.0
 scale = Vector2(0.9, 0.9)
 max_value = 1000.0
 value = 50.0
@@ -38,5 +39,14 @@ vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="Healthbar"]
 autostart = true
+
+[node name="FPS_counter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 62.0
+offset_bottom = 45.0
+text = "FPS: 000"
+script = ExtResource("4_dr6wy")
 
 [connection signal="timeout" from="Healthbar/Timer" to="Healthbar" method="_on_timer_timeout"]

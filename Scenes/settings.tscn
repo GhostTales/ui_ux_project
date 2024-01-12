@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Settings/Sound.cs" id="2_nn7fd"]
 
 [node name="Settings" type="Node2D"]
+scale = Vector2(1.5, 1.5)
 
 [node name="Resolution" type="HSlider" parent="."]
 offset_left = 10.0

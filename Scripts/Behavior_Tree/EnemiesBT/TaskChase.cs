@@ -26,7 +26,10 @@ public partial class TaskChase : BtNode
 
 		if (enemy.GlobalPosition.DistanceTo(Target) > 150f)
 			enemy.Position += Velocity;
-		else enemy.Position -= Velocity;
+
+		if (enemy.GlobalPosition.DistanceTo(Target) < 125f)
+			enemy.Position -= Velocity;
+		
 
 
 

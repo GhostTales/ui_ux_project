@@ -1,18 +1,18 @@
 [gd_scene load_steps=16 format=3 uid="uid://iyummsrjx8xr"]
 
-[ext_resource type="Texture2D" uid="uid://bhc7oh1ewktoc" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headed.png" id="1_ill0w"]
-[ext_resource type="Texture2D" uid="uid://cadod4ontvx0e" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headless.png" id="2_2sbkv"]
-[ext_resource type="Texture2D" uid="uid://d2lbj1h1jn8fl" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/PlayText/Default.png" id="3_dhgq5"]
-[ext_resource type="Texture2D" uid="uid://cnrry1ojxpiwm" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/PlayText/Hover.png" id="4_efswb"]
+[ext_resource type="Texture2D" uid="uid://c6lgqp3xs6sgl" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headed.png" id="1_ill0w"]
+[ext_resource type="Texture2D" uid="uid://j4icfcgsbstd" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Panel/Body/Headless.png" id="2_2sbkv"]
+[ext_resource type="Texture2D" uid="uid://cjmjhfpqcip0m" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/PlayText/Default.png" id="3_dhgq5"]
+[ext_resource type="Texture2D" uid="uid://iug4yeyds871" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/PlayText/Hover.png" id="4_efswb"]
 [ext_resource type="Script" path="res://Scripts/Main_menu/Play_button.cs" id="5_23uw1"]
-[ext_resource type="Texture2D" uid="uid://ctyabq56ckuvb" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/ExitText/Default.png" id="5_lrm6g"]
-[ext_resource type="Texture2D" uid="uid://d0f4aplblv0vx" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/ExitText/Hover.png" id="6_nw2id"]
+[ext_resource type="Texture2D" uid="uid://dxh6uwe7iw48y" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/ExitText/Default.png" id="5_lrm6g"]
+[ext_resource type="Texture2D" uid="uid://ct5n3xvcti67b" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/ExitText/Hover.png" id="6_nw2id"]
 [ext_resource type="Script" path="res://Scripts/Main_menu/Exit_button.cs" id="7_ml1wu"]
-[ext_resource type="Texture2D" uid="uid://deklhro3gagi3" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/SoundOn/Default.png" id="8_34sow"]
-[ext_resource type="Texture2D" uid="uid://cbimrlgt0eigl" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/SoundOn/Hover.png" id="9_r31xy"]
+[ext_resource type="Texture2D" uid="uid://dbr7gelkgxlno" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/SoundOn/Default.png" id="8_34sow"]
+[ext_resource type="Texture2D" uid="uid://fvj7xe8jpdqu" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/SoundOn/Hover.png" id="9_r31xy"]
 [ext_resource type="Script" path="res://Scripts/Main_menu/Sound_button.cs" id="10_qs45e"]
-[ext_resource type="Texture2D" uid="uid://dgcbkotw3l5yf" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Settings/Default.png" id="11_hsx3v"]
-[ext_resource type="Texture2D" uid="uid://bvh6blbfunm65" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Settings/Hover.png" id="12_1koqe"]
+[ext_resource type="Texture2D" uid="uid://c1ct0uxykjhm" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Settings/Default.png" id="11_hsx3v"]
+[ext_resource type="Texture2D" uid="uid://dfrnqfxanvbti" path="res://pixilart/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Settings/Hover.png" id="12_1koqe"]
 [ext_resource type="Script" path="res://Scripts/Main_menu/Settings_button.cs" id="12_jqwv6"]
 [ext_resource type="PackedScene" uid="uid://bvx1ngcwqc66o" path="res://Scenes/settings.tscn" id="12_yr6xk"]
 
@@ -25,39 +25,42 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Headed" type="Sprite2D" parent="."]
-position = Vector2(577.5, 343)
-scale = Vector2(2.01151, 4.25)
+position = Vector2(951.5, 573)
+scale = Vector2(3.31414, 6.98809)
 texture = ExtResource("1_ill0w")
 
 [node name="Headless" type="Sprite2D" parent="."]
-position = Vector2(575.5, 59)
-scale = Vector2(2.00493, 0.701923)
+position = Vector2(951.5, 134)
+scale = Vector2(3.31415, 1.42308)
 texture = ExtResource("2_2sbkv")
 
 [node name="Headless2" type="Sprite2D" parent="."]
-position = Vector2(562, 526.312)
+position = Vector2(959, 913)
 rotation = 1.5708
-scale = Vector2(0.469896, 1.14538)
+scale = Vector2(0.703449, 1.82807)
 texture = ExtResource("2_2sbkv")
 
 [node name="Play_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 412.0
-offset_right = 648.0
-offset_bottom = 500.0
+offset_left = 833.0
+offset_top = 768.0
+offset_right = 1001.0
+offset_bottom = 856.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("3_dhgq5")
 texture_pressed = ExtResource("3_dhgq5")
 texture_hover = ExtResource("4_efswb")
 texture_focused = ExtResource("4_efswb")
+stretch_mode = 0
 script = ExtResource("5_23uw1")
 
 [node name="Exit_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 520.0
-offset_right = 648.0
-offset_bottom = 608.0
+offset_left = 833.0
+offset_top = 920.0
+offset_right = 1001.0
+offset_bottom = 1008.0
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("5_lrm6g")
 texture_pressed = ExtResource("5_lrm6g")
 texture_hover = ExtResource("6_nw2id")
@@ -66,10 +69,11 @@ script = ExtResource("7_ml1wu")
 
 [node name="Sound_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 119.0
+offset_left = 185.0
 offset_top = 20.0
-offset_right = 207.0
+offset_right = 273.0
 offset_bottom = 108.0
+scale = Vector2(1.5, 1.5)
 toggle_mode = true
 texture_normal = ExtResource("8_34sow")
 texture_pressed = ExtResource("8_34sow")
@@ -83,6 +87,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 108.0
 offset_bottom = 108.0
+scale = Vector2(1.5, 1.5)
 toggle_mode = true
 texture_normal = ExtResource("11_hsx3v")
 texture_pressed = ExtResource("11_hsx3v")
@@ -92,4 +97,4 @@ script = ExtResource("12_jqwv6")
 
 [node name="Settings" parent="." instance=ExtResource("12_yr6xk")]
 unique_name_in_owner = true
-position = Vector2(20, 20)
+position = Vector2(20, 106)
