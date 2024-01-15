@@ -2,6 +2,7 @@ using Godot;
 using System;
 
 using BehaviorTree;
+using enemystats;
 
 public partial class TaskChase : BtNode
 {
@@ -22,15 +23,14 @@ public partial class TaskChase : BtNode
 	public override NodeState Evaluate()
 	{
 		Target = player.GlobalPosition;
-		Velocity = enemy.GlobalPosition.DirectionTo(Target) * new Vector2(0.05f, 0.05f);
+		var delta = new Vector2((float)enemy_stats.delta * 50, (float)enemy_stats.delta * 50);
+		Velocity = enemy.Position.DirectionTo(Target).Normalized();
 
-		if (enemy.GlobalPosition.DistanceTo(Target) > 150f)
-			enemy.Position += Velocity;
+		if (enemy.GlobalPosition.DistanceTo(Target) > 175f)
+			enemy.Position += Velocity * delta;
 
-		if (enemy.GlobalPosition.DistanceTo(Target) < 125f)
-			enemy.Position -= Velocity;
-		
-
+		if (enemy.GlobalPosition.DistanceTo(Target) < 175f)
+			enemy.Position += -Velocity * delta;
 		//GD.Print($"player: {player.Position} | enemy: {enemy.Position} || velocity: {Velocity} || distance: {enemy.GlobalPosition.DistanceTo(Target)}");
 
 		return NodeState.RUNNING;

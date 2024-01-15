@@ -13,10 +13,9 @@ public partial class SpitterEnemyBT : BehaviorTree.Tree
 	protected override BtNode SetupTree()
 	{
 		PlayerNode = player_stats.Player_Id;
-		//GD.Print($"{PlayerNode} || {EnemyNode}");
 
 		BtNode root = new TaskChase(EnemyNode, PlayerNode);
 		return root;
-		
+
 	}
 }
