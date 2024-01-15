@@ -4,7 +4,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gm6b"]
 
-[node name="SpitterEnemy" type="CharacterBody2D" node_paths=PackedStringArray("EnemyNode")]
+[node name="SpitterEnemy" type="Node2D" node_paths=PackedStringArray("EnemyNode")]
 script = ExtResource("1_dkyam")
 EnemyNode = NodePath(".")
 

@@ -700,7 +700,3 @@ unique_name_in_owner = true
 script = ExtResource("7_66nab")
 EnemyScene = ExtResource("6_lbb1a")
 SpawnerNode = NodePath(".")
-
-[node name="Timer" type="Timer" parent="EnemySpawner"]
-
-[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]

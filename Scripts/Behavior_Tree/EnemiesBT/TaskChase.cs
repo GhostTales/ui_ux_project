@@ -31,9 +31,6 @@ public partial class TaskChase : BtNode
 			enemy.Position -= Velocity;
 		
 
-
-
-
 		//GD.Print($"player: {player.Position} | enemy: {enemy.Position} || velocity: {Velocity} || distance: {enemy.GlobalPosition.DistanceTo(Target)}");
 
 		return NodeState.RUNNING;

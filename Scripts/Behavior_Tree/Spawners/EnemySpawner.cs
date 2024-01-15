@@ -14,6 +14,5 @@ public partial class EnemySpawner : BehaviorTree.Tree
 		BtNode root = new TaskEnemySpawner(EnemyScene, SpawnerNode);
 		return root;
 	}
-
-
+	
 }
