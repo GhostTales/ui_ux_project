@@ -6,89 +6,60 @@ using playerstats;
 public partial class player : CharacterBody2D
 {
 	private AnimatedSprite2D anim;
-	private AudioStreamPlayer2D walking;
-	public Vector2 current_dir = new Vector2(0, 0); // Vi gemmer retning her
+	
+	public Vector2 current_dir;
 
 	public override void _Ready()
 	{
 		anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		walking = GetNode<AudioStreamPlayer2D>("walking");
 		player_stats.Player_Id = this;
 	}
 
 	[Export]
-	public int Speed { get; set; } = 100;    // Hastighed, redigerbar fra Inspector (ved Export)
+	public int Speed { get; set; } = 100;
 
 	public void GetInput()
 	{
 		Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
-		Velocity = inputDirection * Speed;
+		Velocity = inputDirection * Speed * (1 + player_stats.delta);
 
 		if (inputDirection != new Vector2(0, 0))
 		{
 			PlayAnimation(1);
-			if (walking.Playing != true)
-				walking.Play();
 			current_dir = inputDirection;
 		}
 		else
 			PlayAnimation(0);
 
-
-
-
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		GetInput();     // Henter Player keyboard input
-		MoveAndSlide(); // Flytter sig i henhold fysikkens kræfter og glider af kolliderende Objekter
+		GetInput();
+		MoveAndSlide(); 
 
+		
 		Move_Rigidbody(10);
 
 	}
 
-
+	public override void _Process(double delta)
+	{
+		player_stats.delta = (float)delta;
+	}
 
 	public void PlayAnimation(int movement)
 	{
-
-		Vector2 dir = current_dir;
-
-		if (dir == new Vector2(1, 0))
-		{
-			anim.FlipH = false;
-			if (movement == 1)
+			if (current_dir == Vector2.Left || current_dir == Vector2.Right)
 			{
-				anim.Play("side_walk");
+				anim.FlipH = current_dir.X < 0;
+				anim.Play("side_" + (movement == 1 ? "walk" : "idle"));
 			}
-			else if (movement == 0)
-			{
-				anim.Play("side_idle");
-			}
-		}
-		else if (dir == new Vector2(-1, 0))
-		{
-			anim.FlipH = true;
-			if (movement == 1)
-				anim.Play("side_walk");
-			else if (movement == 0)
-				anim.Play("side_idle");
-		}
-		else if (dir == new Vector2(0, -1))
-		{
-			if (movement == 1)
-				anim.Play("back_walk");
-			else if (movement == 0)
-				anim.Play("back_idle");
-		}
-		else if (dir == new Vector2(0, 1))
-		{
-			if (movement == 1)
-				anim.Play("front_walk");
-			else if (movement == 0)
-				anim.Play("front_idle");
-		}
+			else if (current_dir == Vector2.Up)
+				anim.Play("back_" + (movement == 1 ? "walk" : "idle"));
+
+			else if (current_dir == Vector2.Down)
+				anim.Play("front_" + (movement == 1 ? "walk" : "idle"));
 	}
 
 	public void Move_Rigidbody(float push_force)

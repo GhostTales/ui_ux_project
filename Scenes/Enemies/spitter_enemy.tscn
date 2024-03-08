@@ -2,13 +2,16 @@
 
 [ext_resource type="Script" path="res://Scripts/Behavior_Tree/EnemiesBT/SpitterEnemyBT.cs" id="1_dkyam"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2k0md"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyiqi"]
 
-[node name="SpitterEnemy" type="CharacterBody2D" node_paths=PackedStringArray("EnemyNode")]
+[node name="SpitterEnemy" type="CharacterBody2D"]
+metadata/IsEnemy = true
+
+[node name="BehaviorTree" type="Node2D" parent="." node_paths=PackedStringArray("EnemyNode")]
 script = ExtResource("1_dkyam")
-EnemyNode = NodePath(".")
+EnemyNode = NodePath("..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_2k0md")
+shape = SubResource("CircleShape2D_eyiqi")

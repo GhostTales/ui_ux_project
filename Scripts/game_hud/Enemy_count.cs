@@ -13,6 +13,5 @@ public partial class Enemy_count : Label
 	public override void _Process(double delta)
 	{
 		this.Text = $"Enemies: {enemy_stats.Count}";
-		enemy_stats.delta = delta;
 	}
 }

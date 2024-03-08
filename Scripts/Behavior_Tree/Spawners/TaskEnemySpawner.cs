@@ -14,9 +14,10 @@ public partial class TaskEnemySpawner : BtNode
 	private CollisionShape2D collision;
 	private CircleShape2D circle = new CircleShape2D();
 	private static Random rnd = new Random();
-	public TaskEnemySpawner(Node2D Spawner)
+	public TaskEnemySpawner(Node2D Spawner, PackedScene Scene)
 	{
-		this.EnemyScene = GD.Load<PackedScene>("res://Scenes/Enemies/spitter_enemy.tscn");
+		//this.EnemyScene = GD.Load<PackedScene>("res://Scenes/Enemies/spitter_enemy.tscn");
+		this.EnemyScene = Scene;
 		this.Spawner = Spawner;
 		this.player = player_stats.Player_Id;
 
@@ -25,7 +26,7 @@ public partial class TaskEnemySpawner : BtNode
 	public override NodeState Evaluate()
 	{
 
-		if (Spawner.GetChildCount() < 500 && Engine.GetFramesPerSecond() >= 30)
+		if (Spawner.GetChildCount() < 1000 && Engine.GetFramesPerSecond() >= 30)
 		{
 			var enemy = EnemyScene.Instantiate();
 			(enemy as Node2D).Position = player.Position + new Vector2(500, 0).Rotated((float)rnd.Next(0, 62831) / 10000);
